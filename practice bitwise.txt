@@ -1,0 +1,28 @@
+static string BitwiseOne(string[] strArr)
+{
+    // Validate input
+    if (strArr.Length != 2 || strArr[0].Length != strArr[1].Length)
+    {
+        return "Invalid input: Expected exactly two binary strings of equal length.";
+    }
+
+    int length = strArr[0].Length;
+    char[] result = new char[length];  // Initialize result array
+
+    for (int i = 0; i < length; i++)
+    {
+        // Perform bitwise OR operation on corresponding bits
+        if (strArr[0][i] == '1' || strArr[1][i] == '1')
+        {
+            result[i] = '1';  // Store '1' if any of the bits is '1'
+        }
+        else
+        {
+            result[i] = '0';  // Store '0' if both bits are '0'
+        }
+    }
+
+    return new string(result);  // Convert result array to string and return
+}
+
+
